@@ -20,7 +20,7 @@ image_base_url = "https://secimage.yes24.com/goods/"
 output_directory = "downloaded_images"
 
 # Range of possible item IDs
-start_id = 10720
+start_id = 10724
 end_id = 999999999
 
 # Ensure the output directory exists
@@ -111,8 +111,8 @@ def main():
             if success:
                 download_count += 1
 
-            # Print current download count to console
-            print(f"Number of items downloaded: {download_count}")
+            # Print current book ID and download count to console
+            print(f"Processing book ID: {item_id} | Total downloaded: {download_count}")
 
             # Random delay between 1-5 seconds to avoid detection
             delay = randint(1, 5)
