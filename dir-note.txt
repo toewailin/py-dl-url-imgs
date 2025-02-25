@@ -1,0 +1,35 @@
+
+경제 경영       -> Economics and Management
+사회 정치       -> Social politics
+소설 / 시 / 희곡       ->  Novel / city / Drama
+소설_시_희곡       -> Novel_Poetry_Drama
+어린이          -> children
+에세이          -> Essay
+역사            -> history
+예술            -> art
+유아            -> infant
+인문            -> Humanities
+인물            -> Person
+자기계발        -> Self-development
+자연과학        -> Natural Science
+전집            -> Complete works
+종교            -> religion
+청소년          -> Youth
+
+
+소설 -> 78 images
+역사 -> 89 images
+예술 -> 120 images
+유아  -> 78 images
+인문  -> 78 images
+인물  -> 78 images
+전집  -> 78 images
+종교  -> 78 images
+경제 경영  -> 78 images
+사회 정치  -> 78 images
+소설_시_희곡  -> 78 images
+어린이  -> 78 images
+에세이  -> 78 images
+청소년  -> 78 images
+자기계발  -> 78 images
+자연과학  -> 78 images

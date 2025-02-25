@@ -20,7 +20,7 @@ image_base_url = "https://secimage.yes24.com/goods/"
 output_directory = "downloaded_images"
 
 # Range of possible item IDs
-start_id = 10002
+start_id = 10720
 end_id = 999999999
 
 # Ensure the output directory exists
@@ -61,7 +61,7 @@ def download_image(item_id, session, proxy=None):
 
         if os.path.exists(filepath):
             logging.info(f"Skipped (already exists): {filename}")
-            return True
+            return True  # Count existing files as "downloaded"
 
         if not is_allowed_by_robots(image_url):
             logging.warning(f"robots.txt disallows crawling: {image_url}")
@@ -97,6 +97,8 @@ def download_image(item_id, session, proxy=None):
 
 # Main execution
 def main():
+    download_count = 0  # Initialize counter for successful downloads
+
     with requests.Session() as session:
         # Uncomment the following line if using proxies
         # proxy_iterator = proxy_cycle
@@ -105,20 +107,32 @@ def main():
             current_proxy = None  # Replace with next(proxy_iterator) if using proxies
             success = download_image(item_id, session, current_proxy)
 
+            # Increment counter if download was successful
+            if success:
+                download_count += 1
+
+            # Print current download count to console
+            print(f"Number of items downloaded: {download_count}")
+
             # Random delay between 1-5 seconds to avoid detection
             delay = randint(1, 5)
             logging.info(f"Waiting {delay} seconds before next request...")
             time.sleep(delay)
 
     logging.info(f"Images downloaded to {output_directory}")
+    print(f"Final number of items downloaded: {download_count}")
 
 if __name__ == "__main__":
     try:
         logging.info("Starting image downloader...")
+        print("Starting image downloader...")
         main()
     except KeyboardInterrupt:
         logging.info("Script interrupted by user.")
+        print("Script interrupted by user.")
     except Exception as e:
         logging.error(f"Unexpected error: {e}")
+        print(f"Unexpected error: {e}")
     finally:
         logging.info("Script execution completed.")
+        print("Script execution completed.")
